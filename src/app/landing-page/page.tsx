@@ -16,7 +16,7 @@
 			/>
 		</Head>
 		<div className="wrapper">
-			<div className='flex justify-between bg-black h-svh'>
+			<div className='flex justify-between bg-black h-[100vh]'>
 				<SideMenu/>
 				<FeedArea/>
 			</div>
