@@ -9,6 +9,8 @@
 }
 .body{
     font-family: 'segoe';
+    list-style: none;
+    text-decoration: none;
 }
 
 .story-border{

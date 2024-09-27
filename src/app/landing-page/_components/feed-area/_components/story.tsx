@@ -20,6 +20,22 @@ const profiles = [
   { img: Profile6, username: 'queen of dreams' },
   { img: Profile7, username: 'anime_lover' },
   { img: Profile8, username: 'traveller' },
+  { img: Profile1, username: 'lucky_carp' },
+  { img: Profile2, username: 'peter_loop' },
+  { img: Profile3, username: 'i_am_ai' },
+  { img: Profile4, username: 'l_r_Cr0ft' },
+  { img: Profile5, username: 'robo40' },
+  { img: Profile6, username: 'queen of dreams' },
+  { img: Profile7, username: 'anime_lover' },
+  { img: Profile8, username: 'traveller' },
+  { img: Profile1, username: 'lucky_carp' },
+  { img: Profile2, username: 'peter_loop' },
+  { img: Profile3, username: 'i_am_ai' },
+  { img: Profile4, username: 'l_r_Cr0ft' },
+  { img: Profile5, username: 'robo40' },
+  { img: Profile6, username: 'queen of dreams' },
+  { img: Profile7, username: 'anime_lover' },
+  { img: Profile8, username: 'traveller' },
 ];
 
 const StoryItem = ({ imgSrc, username }: { imgSrc: ImageProps['src']; username: string }) => (
@@ -64,16 +80,16 @@ export default function Story() {
   }, []);
 
   return (
-    <div className="relative flex flex-col justify-center py-5 w-[630px] h-[23%]">
+    <div className="relative flex flex-col justify-center mx-4 xs:mx-3 sm:mx-0 py-5 w-screen sm:w-[630px] h-[23%]">
       {showLeftButton && (
         <button 
-          className='absolute left-4 top-11 border rounded-full bg-[#f5f5f5] w-fit h-fit items-center justify-center z-10'
+          className='absolute left-4 top-11 border rounded-full bg-[#f5f5f5] w-fit h-fit items-center justify-center z-[2]'
           onClick={scrollLeft}>
           <FiChevronLeft className='text-[#666] text-xl' />
         </button>
       )}
       
-      <ul ref={storyListRef} onScroll={handleScroll} className="flex gap-4 overflow-x-auto scrollbar-hide">
+      <ul ref={storyListRef} onScroll={handleScroll} className="flex justify-between xs:justify-normal gap-4 overflow-x-auto scrollbar-hide">
         {profiles.map((profile, index) => (
           <StoryItem key={index} imgSrc={profile.img} username={profile.username} />
         ))}
@@ -81,7 +97,7 @@ export default function Story() {
       
       {showRightButton && (
         <button 
-          className='absolute right-4 top-11 border rounded-full bg-[#f5f5f5] w-fit h-fit items-center justify-center z-10'
+          className='absolute right-4 top-11 border rounded-full bg-[#f5f5f5] w-fit h-fit items-center justify-center z-[2]'
           onClick={scrollRight}>
           <FiChevronRight className='text-[#666] text-xl' />
         </button>

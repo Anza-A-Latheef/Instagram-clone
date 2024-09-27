@@ -14,7 +14,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 	  <html lang="en">
 			<head>
 				<title>Instagram-clone</title>
-				<link rel="icon"  href="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/227_Instagram_logo-512.png"/>
+				<link rel="icon"  href="https://png.pngtree.com/png-clipart/20180524/ourmid/pngtree-instagram-social-media-icon-png-image_3572472.png"/>
 			</head>
 		<body className={inter.className}>{children}</body>
 	  </html>

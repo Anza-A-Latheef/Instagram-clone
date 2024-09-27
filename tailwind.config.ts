@@ -14,7 +14,14 @@ const config: Config = {
       },
       fontFamily: {
         segoe:['segoe']
-      }
+      },
+      screens: {
+        'l':'1260px',
+        'xlg':'1101px',
+        'xs':'541px',
+        '2xs':'481px',
+        '3xs':'361px',
+      },
     },
   },
   plugins: [],

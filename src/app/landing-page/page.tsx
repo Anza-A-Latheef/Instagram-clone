@@ -10,13 +10,10 @@
 		<Head>
 			<title>Netflix Clone</title>
 			<link rel="preconnect" href="https://fonts.gstatic.com" />
-			<link
-			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
-			rel="stylesheet"
-			/>
+			<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
 		</Head>
 		<div className="wrapper">
-			<div className='flex justify-between bg-black h-[100vh]'>
+			<div className='flex justify-between bg-black sm:h-[100vh] h-max'>
 				<SideMenu/>
 				<FeedArea/>
 			</div>
