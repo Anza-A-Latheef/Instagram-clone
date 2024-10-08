@@ -1,3 +1,4 @@
+    import { useState, useEffect } from 'react';
     import Image from 'next/image';
     import React from 'react';
     import Profile1 from '../../../../../../public/images/prof1.jpg';
@@ -15,8 +16,22 @@
 
     interface PostHeaderProps {
         profileImage: StaticImageData;
+        // profileImage: string;
         username: string;
         time: string;
+    }
+
+    interface User {
+        username: string;
+        profile_image: string; 
+    }
+
+    interface Post {
+        id: number;
+        user: User;
+        image: string; 
+        likes: number;
+        created_at: string;
     }
 
     const PostHeader: React.FC<PostHeaderProps> = ({ profileImage, username, time }) => (
@@ -35,6 +50,7 @@
 
     interface PostImageProps {
         postImage: StaticImageData;
+        // postImage: string;
     }
 
     const PostImage: React.FC<PostImageProps> = ({ postImage }) => (
@@ -84,6 +100,8 @@
         time: string;
         profileImage: StaticImageData;
         postImage: StaticImageData;
+        // profileImage: string; 
+        // postImage: string; 
         likes: number;
     }
 
@@ -105,14 +123,47 @@
     );
 
     export default function Posts() {
+        const [posts, setPosts] = useState<Post[]>([]);
+
+        useEffect(() => {
+            const fetchPosts = async () => {
+                try {
+                  const token = localStorage.getItem('token');
+                  const res = await fetch('http://127.0.0.1:8000/posts/', {
+                    method: 'GET',
+                    headers: {
+                      'Authorization': `Token ${token}`, 
+                      'Content-Type': 'application/json',
+                    },
+                  });
+                  const data = await res.json();
+                  setPosts(data);
+                } catch (error) {
+                  console.error('Error fetching posts:', error);
+                }
+              };
+    
+            fetchPosts();
+        }, []);
+        
     return (
         <div className="w-screen sm:w-[630px] flex flex-col items-center pb-1">
-            <PostContent username="lucky_carp" time="3 d" profileImage={Profile1} postImage={Post1} likes={177} />
-            <PostContent username="lucky_carp" time="3 d" profileImage={Profile1} postImage={Profile1} likes={177} />
-            <PostContent username="lucky_carp" time="3 d" profileImage={Profile1} postImage={Profile2} likes={177} />
-            <PostContent username="lucky_carp" time="3 d" profileImage={Profile1} postImage={Profile3} likes={177} />
+             {/* {posts.map((post) => (
+                <PostContent 
+                    key={post.id} 
+                    username={post.user.username} 
+                    time={new Date(post.created_at).toLocaleDateString()} 
+                    profileImage={post.user.profile_image}
+                    postImage={post.image} 
+                    likes={post.likes}
+                    />
+                ))} */}
+                <PostContent username="lucky_carp" time="3 d" profileImage={Profile1} postImage={Post1} likes={177} />
+                <PostContent username="lucky_carp" time="3 d" profileImage={Profile1} postImage={Profile1} likes={177} />
+                <PostContent username="lucky_carp" time="3 d" profileImage={Profile1} postImage={Profile2} likes={177} />
+                <PostContent username="lucky_carp" time="3 d" profileImage={Profile1} postImage={Profile3} likes={177} /> 
         </div>
     );
     }
 
-   
+    

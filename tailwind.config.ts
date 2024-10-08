@@ -21,6 +21,7 @@ const config: Config = {
         'xs':'541px',
         '2xs':'481px',
         '3xs':'361px',
+        '4xs':'321px',
       },
     },
   },

@@ -1,10 +1,8 @@
 "use client";
-
 import React, { useEffect } from 'react';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { useRouter } from 'next/navigation';
-
 const inter = Inter({ subsets: ['latin'] });
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
