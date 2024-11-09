@@ -1,4 +1,5 @@
-	import React, { useState } from 'react';
+	'use client'
+    import React, { useState } from 'react';
 	import Image from 'next/image';
 	import Link from 'next/link';
 	import { useRouter } from 'next/navigation';
@@ -72,17 +73,7 @@ export default function SideMenu({ isLoading }: { isLoading: () => void }) {
                         <MenuItem href="#" Icon={MdOutlineAddBox} label="Create" onClick={() => setShowCreateModal(true)} />
                         <CreatePostModal isOpen={showCreateModal} onClose={() => setShowCreateModal(false)} isLoading={isLoading} />
                         <MenuItem href="#" Icon={null} label="Profile" isProfile />
-                        <MenuItem href="#" Icon={RxHamburgerMenu} label="More" isMore onClick={() => setShowLogout(!showLogout)} />
-                        {showLogout && (
-                            <li className="mt-0">
-                                <button
-                                    className="text-white py-1 px-[30%] font-light border border-[#262626] rounded-lg hover:bg-[#ffffff1a]"
-                                    onClick={handleLogout}
-                                >
-                                    Log out
-                                </button>
-                            </li>
-                        )}
+                        <MenuItem href="#" Icon={RxHamburgerMenu} label="Log Out" isMore onClick={handleLogout} />
                     </ul>
                 </nav>
             </div>

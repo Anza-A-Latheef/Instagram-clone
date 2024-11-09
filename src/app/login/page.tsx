@@ -1,5 +1,4 @@
 'use client'
-
 import React, { useState}  from 'react';
 import { useRouter } from 'next/navigation'; 
 import Image from 'next/image';
@@ -36,9 +35,15 @@ const Login = () => {
             Cookies.set('token', data.access, {expires:7 });
             Cookies.set('profile_pic',data?.profile_picture_url)
             Cookies.set('username',data?.username)
+            Cookies.set('first_name', data.user?.first_name, { expires: 7 });
             Cookies.set('userId',data?.user_id)
             console.log('successful login');
             router.push('/landing-page');
+            console.log("Setting cookies:", {
+                first_name: data.first_name,
+                username: data.username,
+                userId: data.user_id
+            });
             
         } else {
             console.error('Access token not found in response:', data);

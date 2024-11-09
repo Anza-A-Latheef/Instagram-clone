@@ -14,7 +14,7 @@ const [username, setUsername] = useState('');
 const [email, setEmail] = useState('');
 const [password, setPassword] = useState('');
 const [profilePicture, setProfilePicture] = useState<File | null>(null); 
-
+const [firstName, setFirstName] = useState('');
 
 const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,6 +23,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     formData.append("username", username);
     formData.append("password", password);
     formData.append("email", email);
+    formData.append("first_name", firstName);
     if (profilePicture) {
         formData.append("profile_picture", profilePicture);
     }
@@ -62,6 +63,7 @@ return (
                 <input className='outline-none bg-[#fafafa] border border-[#dbdbdb] rounded-[5px] text-[11px] w-full px-3 py-[10px] placeholder:text-[#737373]'  type="email"  placeholder="Email address"  required  onChange={(e) => setEmail(e.target.value)}/>
                 <input className='outline-none bg-[#fafafa] border border-[#dbdbdb] rounded-[5px] text-[11px] w-full px-3 py-[10px] placeholder:text-[#737373]'  type="password"  placeholder="Password"  required  onChange={(e) => setPassword(e.target.value)}  autoComplete="current-password"/>
                 <input className='outline-none bg-[#fafafa] border border-[#dbdbdb] rounded-[5px] text-[11px] w-full px-3 py-[10px] placeholder:text-[#737373]'  type="text"  placeholder="Username"  required  onChange={(e) => setUsername(e.target.value)}/>
+                <input className='outline-none bg-[#fafafa] border border-[#dbdbdb] rounded-[5px] text-[11px] w-full px-3 py-[10px] placeholder:text-[#737373]'  type="text"  placeholder="First Name"  required  onChange={(e) => setFirstName(e.target.value)}/>
                 <div className="w-full mt-1">
                     <input className="hidden" type="file" accept="image/*" id="file-input" onChange={(e) => {
                         console.log("profile pic",e.target)

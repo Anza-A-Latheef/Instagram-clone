@@ -1,4 +1,7 @@
+'use client'
+
 import React, { useEffect } from 'react';
+import { useRouter } from 'next/navigation'; 
 import Image from 'next/image';
 import Profile1 from '../../../../../../public/images/prof1.jpg';
 import Profile2 from '../../../../../../public/images/prof2.jpeg';
@@ -9,11 +12,20 @@ import Cookies from 'js-cookie';
 
 
 const Profiles: React.FC = () => {
+  const router = useRouter();
   const image:any = Cookies.get('profile_pic')
   const username = Cookies.get('username')
+  const first_name = Cookies.get('first_name');
+
+  const handleAccount = () => {
+    router.push('/account'); 
+};
+
   useEffect(()=>{
     console.log("image",image)
     console.log("username",username)
+    console.log("firstname",first_name)
+    console.log("All cookies:", Cookies.get());
   })
   const profiles = [
     {
@@ -46,13 +58,13 @@ const Profiles: React.FC = () => {
   return (
     <div className="hidden p-6 xlg:block">
       <div className="flex items-center justify-between py-2">
-        <div className=" flex items-center justify-center gap-3">
+        <div className=" flex items-center justify-center gap-3" onClick={handleAccount}>
           <div className="cursor-pointer w-11 h-11">
             <Image src={image} alt="Profile Picture" width={1000} height={1000} className="w-full h-full border-0 rounded-full" />
           </div>
           <div className="flex flex-col gap-1">
             <h6 className="text-[#f5f5f5] font-bold text-[13px] cursor-pointer">{username}</h6>
-            <span className="text-[#a8a8a8] text-xs">sample_user</span>
+            <span className="text-[#a8a8a8] text-xs">{first_name}</span>
           </div>
         </div>
         <div>
