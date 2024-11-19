@@ -35,7 +35,7 @@ const Login = () => {
             Cookies.set('token', data.access, {expires:7 });
             Cookies.set('profile_pic',data?.profile_picture_url)
             Cookies.set('username',data?.username)
-            Cookies.set('first_name', data.user?.first_name, { expires: 7 });
+            Cookies.set('first_name', data?.first_name);
             Cookies.set('userId',data?.user_id)
             console.log('successful login');
             router.push('/landing-page');

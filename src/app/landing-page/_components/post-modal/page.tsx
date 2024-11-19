@@ -21,7 +21,7 @@ const CreatePostModal = ({ isOpen, onClose,isLoading }: { isOpen: boolean,isLoad
         if (image) formData.append('image', image);
         formData.append('caption', caption);
         formData.append('created_by',userId)
-
+        console.log("formdata",formData)
         try {
             const response = await fetch('http://127.0.0.1:8000/api/post/', {
                 method: 'POST',

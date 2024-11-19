@@ -11,7 +11,7 @@ import { CgClapperBoard } from 'react-icons/cg';
 import { PiMessengerLogoLight } from 'react-icons/pi';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { FaInstagram } from 'react-icons/fa';
-import InstaLogo from '../../../../public/images/instalogo.png';
+import InstaLogo from '../../../../public/images/Instalogo.png';
 import ProfilePic from '../../../../public/images/profilepic.jpg';
 import Cookies from 'js-cookie';
 
@@ -61,7 +61,8 @@ return (
             </div>
             <nav>
                 <ul className="flex flex-col gap-[5px] mx-3 mt-1">
-                    <MenuItem href="#" Icon={GoHomeFill} label="Home" />
+                    
+                    <MenuItem href="#" Icon={GoHomeFill} label="Home" onClick={()=>router.push('/landing-page')} />
                     <MenuItem href="#" Icon={IoSearchOutline} label="Search" />
                     <MenuItem href="#" Icon={MdOutlineExplore} label="Explore" />
                     <MenuItem href="#" Icon={CgClapperBoard} label="Reels" />
