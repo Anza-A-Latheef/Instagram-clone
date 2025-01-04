@@ -203,6 +203,7 @@ const PostCommentSection: React.FC<PostCommentSectionProps> = ({ postId }) => {
             if (res.ok) {
                 const data = await res.json();
                 setComments(data);
+                console.log("comments data",data)
             } else {
                 console.error('Failed to fetch comments');
             }

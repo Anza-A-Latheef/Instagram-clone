@@ -3,11 +3,11 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/navigation'; 
 import Image from 'next/image';
-import Profile1 from '../../../../../../public/images/prof1.jpg';
-import Profile2 from '../../../../../../public/images/prof2.jpeg';
-import Profile3 from '../../../../../../public/images/prof3.jpeg';
-import Profile4 from '../../../../../../public/images/prof4.jpeg';
-import Profile5 from '../../../../../../public/images/prof5.jpeg';
+import Profile1 from '../../../../../../../public/images/prof1.jpg';
+import Profile2 from '../../../../../../../public/images/prof2.jpeg';
+import Profile3 from '../../../../../../../public/images/prof3.jpeg';
+import Profile4 from '../../../../../../../public/images/prof4.jpeg';
+import Profile5 from '../../../../../../../public/images/prof5.jpeg';
 import Cookies from 'js-cookie';
 
 
@@ -18,7 +18,7 @@ const Profiles: React.FC = () => {
   const first_name = Cookies.get('first_name');
 
   const handleAccount = () => {
-    router.push('/account'); 
+    router.push('/home/account'); 
 };
 
   useEffect(()=>{

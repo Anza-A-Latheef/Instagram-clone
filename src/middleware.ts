@@ -10,12 +10,12 @@ export function middleware(req: NextRequest) {
   }
 
   if (token && req.nextUrl.pathname === '/login') {
-    return NextResponse.redirect(new URL('/landing-page', req.url));
+    return NextResponse.redirect(new URL('/home/landing-page', req.url));
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ['/landing-page', '/login', '/other-protected-routes'],
+  matcher: ['/home/landing-page', '/login', '/other-protected-routes'],
 };

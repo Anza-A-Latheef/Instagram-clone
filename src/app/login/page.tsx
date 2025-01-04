@@ -38,7 +38,7 @@ const Login = () => {
             Cookies.set('first_name', data?.first_name);
             Cookies.set('userId',data?.user_id)
             console.log('successful login');
-            router.push('/landing-page');
+            router.push('/home/landing-page');
             console.log("Setting cookies:", {
                 first_name: data.first_name,
                 username: data.username,

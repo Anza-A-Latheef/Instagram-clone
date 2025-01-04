@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import InstaLogo from '../../../../../../public/images/instablack.png'
+import InstaLogo from '../../../../../../../public/images/instablack.png'
 import { IoMdHeartEmpty } from "react-icons/io"; 
 import { IoIosSearch } from "react-icons/io";
 export default function Respheader() {

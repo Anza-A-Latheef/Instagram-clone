@@ -11,9 +11,10 @@ import { CgClapperBoard } from 'react-icons/cg';
 import { PiMessengerLogoLight } from 'react-icons/pi';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { FaInstagram } from 'react-icons/fa';
-import InstaLogo from '../../../../public/images/Instalogo.png';
-import ProfilePic from '../../../../public/images/profilepic.jpg';
+
+import ProfilePic from '../../../../../public/images/profilepic.jpg';
 import Cookies from 'js-cookie';
+import CreatePostModal from '../_components/post-modal/page';
 
 interface MenuItemProps {
 href: string;
@@ -43,7 +44,9 @@ const MenuItem: React.FC<MenuItemProps> = ({ href, Icon, label, isProfile, isMor
 </li>
 );
 
-export default function SideMenu(){
+export default function SideMenu({ isLoading }: { isLoading: () => void }) {
+const [showLogout, setShowLogout] = useState(false);
+const [showCreateModal, setShowCreateModal] = useState(false);
 const router = useRouter();
 
 const handleLogout = () => {
@@ -53,23 +56,24 @@ const handleLogout = () => {
 
 return (
     <>
-        <div className="hidden l:block w-[18%] border-[#262626] border-r-[1px] relative h-full">
+        <div className="hidden l:block w-[23.5%] border-[#262626] border-r-[1px] relative">
             <div className="Logo">
                 <Link href="#">
-                    <Image src={InstaLogo} alt="Instagram logo" className="w-[136px] h-[89px] ml-2" />
+                    {/* <Image src={InstaLogo} alt="Instagram logo" className="w-[136px] h-[89px] mt-2 ml-2" /> */}
+                    <Image src={require('../../../../../public/images/Instalogo.png')} alt="Instagram logo" className="w-[136px] h-[89px] mt-2 ml-2" />
                 </Link>
             </div>
             <nav>
                 <ul className="flex flex-col gap-[5px] mx-3 mt-1">
-                    
-                    <MenuItem href="#" Icon={GoHomeFill} label="Home" onClick={()=>router.push('/landing-page')} />
+                    <MenuItem href="/home/landing-page" Icon={GoHomeFill} label="Home" />
                     <MenuItem href="#" Icon={IoSearchOutline} label="Search" />
                     <MenuItem href="#" Icon={MdOutlineExplore} label="Explore" />
                     <MenuItem href="#" Icon={CgClapperBoard} label="Reels" />
                     <MenuItem href="#" Icon={PiMessengerLogoLight} label="Messages" />
                     <MenuItem href="#" Icon={IoMdHeartEmpty} label="Notifications" />
-                    <MenuItem href="#" Icon={MdOutlineAddBox} label="Create"/>
-                    <MenuItem href="#" Icon={null} label="Profile" isProfile />
+                    <MenuItem href="#" Icon={MdOutlineAddBox} label="Create" onClick={() => setShowCreateModal(true)} />
+                    <CreatePostModal isOpen={showCreateModal} onClose={() => setShowCreateModal(false)} isLoading={isLoading} />
+                    <MenuItem href="/home/account" Icon={null} label="Profile" isProfile />
                     <MenuItem href="#" Icon={RxHamburgerMenu} label="Log Out" isMore onClick={handleLogout} />
                 </ul>
             </nav>

@@ -1,5 +1,5 @@
 'use client'
-import LandingPage from "./landing-page/page";
+// import LandingPage from "./landing-page/page";
 import { useState,useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { checkAuthentication } from "../../authUtils";
@@ -24,7 +24,7 @@ export default function Home() {
 }
   return (
     <>
-      <LandingPage/>
+      {/* <LandingPage/> */}
     </>
   )
 }

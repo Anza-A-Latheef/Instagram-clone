@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import ProfilePic from '../../../../../../public/images/profilepic.jpg';
+import ProfilePic from '../../../../../../../public/images/profilepic.jpg';
 import { GoHomeFill } from "react-icons/go";
 import { MdOutlineExplore, MdOutlineAddBox } from "react-icons/md";
 import { CgClapperBoard } from "react-icons/cg";

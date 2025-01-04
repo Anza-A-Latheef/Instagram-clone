@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Cookies from 'js-cookie';
+import { log } from 'console';
 
 const CreatePostModal = ({ isOpen, onClose,isLoading }: { isOpen: boolean,isLoading:()=>void, onClose: () => void }) => {
     const [caption, setCaption] = useState('');
     const [image, setImage] = useState<File | null>(null);
     const token = Cookies.get('token'); 
     const userId:any = Cookies.get('userId')
-
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files && e.target.files[0]) {
             setImage(e.target.files[0]);
@@ -16,12 +16,16 @@ const CreatePostModal = ({ isOpen, onClose,isLoading }: { isOpen: boolean,isLoad
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         console.log("token",token)
-
+        console.log("token caption", caption)
+        console.log("token image", image)
+        console.log("token id", userId)
         const formData = new FormData();
         if (image) formData.append('image', image);
         formData.append('caption', caption);
         formData.append('created_by',userId)
+
         console.log("formdata",formData)
+
         try {
             const response = await fetch('http://127.0.0.1:8000/api/post/', {
                 method: 'POST',
@@ -37,7 +41,7 @@ const CreatePostModal = ({ isOpen, onClose,isLoading }: { isOpen: boolean,isLoad
                 onClose();
                 isLoading()
             } else {
-                console.error('Failed to create post:', response.statusText);
+                console.error('Failed to create post:', response);
             }
         } catch (error) {
             console.error('Error:', error);

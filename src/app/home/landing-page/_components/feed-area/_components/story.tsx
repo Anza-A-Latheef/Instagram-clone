@@ -2,14 +2,14 @@ import React, { useRef, useState, useEffect  } from 'react';
 import Image from 'next/image';
 import { ImageProps } from 'next/image';
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
-import Profile1 from '../../../../../../public/images/prof1.jpg';
-import Profile2 from '../../../../../../public/images/prof2.jpeg';
-import Profile3 from '../../../../../../public/images/prof3.jpeg';
-import Profile4 from '../../../../../../public/images/prof4.jpeg';
-import Profile5 from '../../../../../../public/images/prof5.jpeg';
-import Profile6 from '../../../../../../public/images/prof6.jpeg';
-import Profile7 from '../../../../../../public/images/prof7.jpeg';
-import Profile8 from '../../../../../../public/images/prof8.jpeg';
+import Profile1 from '../../../../../../../public/images/prof1.jpg';
+import Profile2 from '../../../../../../../public/images/prof2.jpeg';
+import Profile3 from '../../../../../../../public/images/prof3.jpeg';
+import Profile4 from '../../../../../../../public/images/prof4.jpeg';
+import Profile5 from '../../../../../../../public/images/prof5.jpeg';
+import Profile6 from '../../../../../../../public/images/prof6.jpeg';
+import Profile7 from '../../../../../../../public/images/prof7.jpeg';
+import Profile8 from '../../../../../../../public/images/prof8.jpeg';
 
 const profiles = [
   { img: Profile1, username: 'lucky_carp' },

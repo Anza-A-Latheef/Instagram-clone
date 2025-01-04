@@ -1,10 +1,12 @@
 "use client"
 import React, { useState } from 'react'
 import Head from 'next/head'
-import SideMenu from './_components/sidemenu'
-import FeedArea from './_components/feed-area/page'
+import SideMenu from './landing-page/_components/sidemenu'
+import FeedArea from './landing-page/_components/feed-area/page'
 
-export default function LandingPage() {
+export default function Home({
+    children,
+}:Readonly<{children:React.ReactNode}>) {
 	const [isLoading,setLoading] = useState<any>(true)
 	const toggleLoadingTrue = ()=>{
 		setLoading(true)
@@ -22,9 +24,11 @@ return (
 	<div className="wrapper">
 		<div className='flex justify-between bg-black sm:h-[100vh] h-max'>
 			<SideMenu isLoading={toggleLoadingTrue}/>
-			<FeedArea isLoading={isLoading} setLoading={toggleLoadingFalse}/>
+            {children}
+			{/* <FeedArea isLoading={isLoading} setLoading={toggleLoadingFalse}/> */}
 		</div>
 	</div>
 	</>
 )
 }
+
