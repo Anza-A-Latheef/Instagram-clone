@@ -22,10 +22,9 @@ return (
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
 	</Head>
 	<div className="wrapper">
-		<div className='flex justify-between bg-black sm:h-[100vh] h-max'>
+		<div className='flex bg-black sm:h-[100vh] h-max'>
 			<SideMenu isLoading={toggleLoadingTrue}/>
             {children}
-			{/* <FeedArea isLoading={isLoading} setLoading={toggleLoadingFalse}/> */}
 		</div>
 	</div>
 	</>

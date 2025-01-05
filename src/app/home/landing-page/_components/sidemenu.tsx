@@ -56,22 +56,21 @@ const handleLogout = () => {
 
 return (
     <>
-        <div className="hidden l:block w-[23.5%] border-[#262626] border-r-[1px] relative">
+        <div className="hidden l:block w-[18.5%] border-[#262626] border-r-[1px] relative">
             <div className="Logo">
                 <Link href="#">
-                    {/* <Image src={InstaLogo} alt="Instagram logo" className="w-[136px] h-[89px] mt-2 ml-2" /> */}
                     <Image src={require('../../../../../public/images/Instalogo.png')} alt="Instagram logo" className="w-[136px] h-[89px] mt-2 ml-2" />
                 </Link>
             </div>
             <nav>
                 <ul className="flex flex-col gap-[5px] mx-3 mt-1">
                     <MenuItem href="/home/landing-page" Icon={GoHomeFill} label="Home" />
-                    <MenuItem href="#" Icon={IoSearchOutline} label="Search" />
-                    <MenuItem href="#" Icon={MdOutlineExplore} label="Explore" />
-                    <MenuItem href="#" Icon={CgClapperBoard} label="Reels" />
-                    <MenuItem href="#" Icon={PiMessengerLogoLight} label="Messages" />
-                    <MenuItem href="#" Icon={IoMdHeartEmpty} label="Notifications" />
-                    <MenuItem href="#" Icon={MdOutlineAddBox} label="Create" onClick={() => setShowCreateModal(true)} />
+                    <MenuItem href="/home/error" Icon={IoSearchOutline} label="Search" />
+                    <MenuItem href="/home/error" Icon={MdOutlineExplore} label="Explore" />
+                    <MenuItem href="/home/error" Icon={CgClapperBoard} label="Reels" />
+                    <MenuItem href="/home/error" Icon={PiMessengerLogoLight} label="Messages" />
+                    <MenuItem href="/home/error" Icon={IoMdHeartEmpty} label="Notifications" />
+                    <MenuItem href="/home/account" Icon={MdOutlineAddBox} label="Create" onClick={() => setShowCreateModal(true)} />
                     <CreatePostModal isOpen={showCreateModal} onClose={() => setShowCreateModal(false)} isLoading={isLoading} />
                     <MenuItem href="/home/account" Icon={null} label="Profile" isProfile />
                     <MenuItem href="#" Icon={RxHamburgerMenu} label="Log Out" isMore onClick={handleLogout} />
@@ -91,7 +90,7 @@ return (
                     <MenuItem href="#" Icon={IoMdHeartEmpty} label="" />
                     <MenuItem href="#" Icon={MdOutlineAddBox} label="" />
                     <MenuItem href="#" Icon={null} label="" isProfile />
-                    <MenuItem href="#" Icon={RxHamburgerMenu} label="" />
+                    <MenuItem href="#" Icon={RxHamburgerMenu} isMore label="" />
                 </ul>
             </nav>
         </div>

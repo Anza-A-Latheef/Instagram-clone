@@ -85,7 +85,7 @@ export default function Story() {
         <button 
           className='absolute left-4 top-11 border rounded-full bg-[#f5f5f5] w-fit h-fit items-center justify-center z-[2]'
           onClick={scrollLeft}>
-          <FiChevronLeft className='text-[#666] text-xl' />
+          {/* <FiChevronLeft className='text-[#666] text-xl' /> */}
         </button>
       )}
       
@@ -99,7 +99,7 @@ export default function Story() {
         <button 
           className='absolute right-4 top-11 border rounded-full bg-[#f5f5f5] w-fit h-fit items-center justify-center z-[2]'
           onClick={scrollRight}>
-          <FiChevronRight className='text-[#666] text-xl' />
+          {/* <FiChevronRight className='text-[#666] text-xl' /> */}
         </button>
       )}
     </div>
